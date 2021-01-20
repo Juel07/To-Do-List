@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fec3a6;
+  padding: 5em 0;
+}
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font: bold 34px/120% Georgia, serif;
+  opacity: 0.9;
+  color: #141301;
+}
+
+li {
+  text-align: left;
+  font: 400 16px/120% "Rubik", sans-serif;
+  opacity: 0.9;
+  color: #141301;
+  margin-left: 10px;
+  flex: 1;
+}
+
+p {
+  text-align: center;
+  font: normal 16px/120% "Rubik", sans-serif;
+  color: #141301;
+  padding: 0.3em 1em;
+}
+
+section {
+  border-radius: 10px;
+  border: 3px solid #141301;
+  margin-top: 2em;
+  padding: 1em 2em;
+  background-color: #ffd1bb;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:not(.check-btn) {
+  text-align: center;
+  background-color: #141301;
+  color: #f0f0f0;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  font: 400 15px/120% "Rubik", sans-serif;
+}
+
+button:not(.check-btn):hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+section .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.taskList {
+  width: 100%;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fffcf8;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0 0.5em;
+  margin-bottom: 0.5em;
+}
+
+input[type="text"] {
+  padding: 0.5em 0;
+  width: 300px;
+  max-width: 80%;
+  color: rgb(48, 47, 47);
+  cursor: text;
+  margin: 0;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #141301;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+input:focus {
+  border-bottom: 2px solid #ccad9c;
+}
+
+input::placeholder {
+  color: #353131;
+  font-size: 15px;
+}
+
+.check-btn {
+  border-radius: 50%;
+  background-color: #fec3a6;
+  border: 1px solid #353131;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 4px 7px;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.completed {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+
+@media screen and (max-width: 426px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 0.3em 1em;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    margin-top: 1em;
+  }
+
+  .check-btn {
+    margin-top: 0;
+    padding: 3px 6px;
+  }
+
+  .delete-btn {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  section .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    max-width: 90%;
+    padding: 0.5em 1em;
+    margin: 2em 1em;
+  }
+
+  .task {
+    height: 40px;
+  }
+}
