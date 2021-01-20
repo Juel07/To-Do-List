@@ -2,6 +2,15 @@
 const toDoInput = document.querySelector('#toDoInput')
 const addBtn = document.querySelector('#add-btn')
 const taskList = document.querySelector('.taskList')
+const dateDiv = document.querySelector('#date')
+
+// get current date
+let today = new Date()
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+const displayDate = days[today.getDay()] + ',' + ' ' + months[today.getMonth()] + ' ' + today.getDate()
+dateDiv.innerHTML = displayDate
 
 // disable ADD button if input field is empty
 const disableBtn = () => {
@@ -48,7 +57,7 @@ const addTask = () => {
         disableBtn()
         // return
     }
-    
+
     // clear input field once task is added
     toDoInput.value = ""
 }
