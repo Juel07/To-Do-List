@@ -9,17 +9,28 @@ let today = new Date()
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-const displayDate = days[today.getDay()] + ',' + ' ' + months[today.getMonth()] + ' ' + today.getDate()
+let currMonth = months[today.getMonth()]
+let currDay = days[today.getDay()]
+let currDate = today.getDate()
+
+if (currDate <= 10) {
+    currDate = '0' + currDate
+}
+
+if (currMonth <= 10) {
+    currMonth = '0' + currMonth
+}
+
+const displayDate = currDay + ',' + ' ' + currMonth + ' ' + currDate
 dateDiv.innerHTML = displayDate
 
-// disable ADD button if input field is empty
+// Check if input field is empty & display alert
 const disableBtn = () => {
     const task = toDoInput.value
     if (task) {
         addBtn.disabled = false;
     }
     else {
-        addBtn.disabled = true;
         alert("Please enter a task");
     }
 }
@@ -55,7 +66,6 @@ const addTask = () => {
         taskList.appendChild(taskDiv)
     } else {
         disableBtn()
-        // return
     }
 
     // clear input field once task is added
@@ -67,11 +77,16 @@ const deleteOrCompleteTask = (event) => {
     let item = event.target
 
     if (item.classList[0] === 'delete-btn') {
+        // delete the task
         item.parentElement.remove()
     }
 
     if (item.classList[0] === 'check-btn') {
-        item.parentElement.classList.toggle('completed')
+        let taskDiv = item.parentElement.classList
+        let taskText = item.nextElementSibling.classList
+        // toggle styling for completed tasks
+        taskDiv.toggle('reduce-opacity')
+        taskText.toggle('strike-through')
     }
 }
 
