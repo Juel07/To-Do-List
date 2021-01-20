@@ -4,7 +4,7 @@
 
 ### To view
 
-Link to project: https://juel07.github.io/To-do-list/
+Link to project: https://juel07.github.io/to-do-list/
 
 ### Demo
 
